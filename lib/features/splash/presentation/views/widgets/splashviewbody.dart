@@ -1,6 +1,9 @@
+import 'package:bookly_app/const.dart';
+import 'package:bookly_app/features/home/date/presentation/view/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/animatedbuilder.dart';
 import 'package:bookly_app/utalts/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Splashviewbody extends StatefulWidget {
   const Splashviewbody({super.key});
@@ -16,16 +19,9 @@ class _SplashviewbodyState extends State<Splashviewbody>
 
   @override
   void initState() {
-    animatedController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 20),
-    );
     super.initState();
-    sildanmation = Tween<Offset>(
-      begin: Offset(0, 10),
-      end: Offset(0, 0),
-    ).animate(animatedController);
-    animatedController.forward();
+    initstateanimation();
+    navegattohome();
   }
 
   @override
@@ -46,5 +42,28 @@ class _SplashviewbodyState extends State<Splashviewbody>
         animatedBuilder(sildanmation: sildanmation),
       ],
     );
+  }
+
+  void initstateanimation() {
+    animatedController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+
+    sildanmation = Tween<Offset>(
+      begin: Offset(0, 10),
+      end: Offset(0, 0),
+    ).animate(animatedController);
+    animatedController.forward();
+  }
+
+  void navegattohome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.fade,
+        duration: ktransitionDeuration,
+      );
+    });
   }
 }
