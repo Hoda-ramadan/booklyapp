@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/date/presentation/view/widget/customlistviewItem.dart';
+import 'package:bookly_app/features/home/date/presentation/view/widget/feturelistviewitem.dart';
 import 'package:flutter/material.dart';
 
 class Customlistview extends StatelessWidget {
@@ -11,7 +11,7 @@ class Customlistview extends StatelessWidget {
       itemBuilder: (context, i) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: CustomListViewItem(),
+          child: Feturelistviewitem(),
         );
       },
     );
