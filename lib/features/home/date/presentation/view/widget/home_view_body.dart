@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/date/presentation/view/widget/bestsellerlistviewitem.dart';
 import 'package:bookly_app/features/home/date/presentation/view/widget/customAppbar.dart';
 import 'package:bookly_app/features/home/date/presentation/view/widget/customListview.dart';
 import 'package:bookly_app/utalts/style.dart';
@@ -19,7 +20,8 @@ class HomeViewBody extends StatelessWidget {
             child: Customlistview(),
           ),
           SizedBox(height: 50),
-          Text("Best Seller", style: Style.titlemidum),
+          Text("Best Seller", style: Style.textstyle18),
+          Bestsellerlistviewitem(),
         ],
       ),
     );
