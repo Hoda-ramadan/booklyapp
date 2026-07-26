@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/date/presentation/view/widget/bestsellerListview.dart';
 import 'package:bookly_app/features/home/date/presentation/view/widget/bestsellerlistviewitem.dart';
 import 'package:bookly_app/features/home/date/presentation/view/widget/customAppbar.dart';
 import 'package:bookly_app/features/home/date/presentation/view/widget/customListview.dart';
@@ -9,22 +10,33 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Customappbar(),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .3,
-            child: Customlistview(),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Customappbar(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .3,
+                child: Customlistview(),
+              ),
+              SizedBox(height: 50),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Text("Best Seller", style: Style.textstyle18),
+              ),
+              const SizedBox(height: 20),
+            ],
           ),
-          SizedBox(height: 50),
-          Text("Best Seller", style: Style.textstyle18),
-          const SizedBox(height: 20),
-          Bestsellerlistviewitem(),
-        ],
-      ),
+        ),
+        SliverFillRemaining(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+            child: Bestsellerlistview(),
+          ),
+        ),
+      ],
     );
   }
 }

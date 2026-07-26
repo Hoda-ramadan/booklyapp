@@ -1,4 +1,5 @@
 import 'package:bookly_app/const.dart';
+import 'package:bookly_app/features/home/date/presentation/view/widget/bookrating.dart';
 import 'package:bookly_app/utalts/assets.dart';
 import 'package:bookly_app/utalts/style.dart';
 import 'package:flutter/material.dart';
@@ -26,29 +27,33 @@ class Bestsellerlistviewitem extends StatelessWidget {
         const SizedBox(width: 30),
         SizedBox(
           width: MediaQuery.of(context).size.width * .5,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "The Jungle Book ",
-                style: Style.textstyle20.copyWith(fontFamily: kGTsectrafine),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 3),
-              Text("J.K. Rowling", style: Style.textstyle14),
-              const SizedBox(height: 3),
-              Row(
-                children: [
-                  Text(
-                    "19.99&",
-                    style: Style.textstyle20.copyWith(
-                      fontWeight: FontWeight.bold,
+          child: Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "The Jungle Book ",
+                  style: Style.textstyle20.copyWith(fontFamily: kGTsectrafine),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 3),
+                Text("J.K. Rowling", style: Style.textstyle14),
+                const SizedBox(height: 3),
+                Row(
+                  children: [
+                    Text(
+                      "19.99&",
+                      style: Style.textstyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    Spacer(),
+                    Bookrating(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ],
