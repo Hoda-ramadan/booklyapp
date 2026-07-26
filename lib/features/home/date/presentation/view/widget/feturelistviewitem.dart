@@ -1,4 +1,4 @@
-import 'package:bookly_app/utalts/assets.dart';
+import 'package:bookly_app/core/utalts/assets.dart';
 import 'package:flutter/material.dart';
 
 class Feturelistviewitem extends StatelessWidget {

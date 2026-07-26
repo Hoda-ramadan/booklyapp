@@ -1,4 +1,4 @@
-import 'package:bookly_app/utalts/style.dart';
+import 'package:bookly_app/core/utalts/style.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
