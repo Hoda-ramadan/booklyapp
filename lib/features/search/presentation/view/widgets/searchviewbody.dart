@@ -15,7 +15,7 @@ class Searchviewbody extends StatelessWidget {
         children: [
           Customtextfeild(),
           SizedBox(height: 16),
-          Text("Best Seller", style: Style.textstyle18),
+          Text("Search Result", style: Style.textstyle18),
           SizedBox(height: 16),
           SearchResultlist(),
         ],
