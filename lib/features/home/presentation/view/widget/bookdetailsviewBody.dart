@@ -1,6 +1,6 @@
-import 'package:bookly_app/features/home/date/presentation/view/widget/bookdetailssction.dart';
-import 'package:bookly_app/features/home/date/presentation/view/widget/custombookdetailsappbar.dart';
-import 'package:bookly_app/features/home/date/presentation/view/widget/similer_books_section.dart';
+import 'package:bookly_app/features/home/presentation/view/widget/bookdetailssction.dart';
+import 'package:bookly_app/features/home/presentation/view/widget/custombookdetailsappbar.dart';
+import 'package:bookly_app/features/home/presentation/view/widget/similer_books_section.dart';
 import 'package:flutter/material.dart';
 
 class Bookdetailsviewbody extends StatelessWidget {

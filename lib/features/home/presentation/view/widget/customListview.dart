@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/date/presentation/view/widget/feturelistviewitem.dart';
+import 'package:bookly_app/features/home/presentation/view/widget/feturelistviewitem.dart';
 import 'package:flutter/material.dart';
 
 class Customlistview extends StatelessWidget {
