@@ -1,3 +1,3 @@
-abstract class HomeError {}
+class HomeError {}
 
-abstract class servererror {}
+class servererror {}
