@@ -29,7 +29,21 @@ abstract class Homerepoimplement extends Homerepo {
     }
   }
 
-  Future<Either<HomeError, List<BookModel>>> fatchfeturebooks() {
-    throw UnimplementedError();
+  Future<Either<HomeError, List<BookModel>>> fatchfeturebooks() async {
+    try {
+      var data = await apiservies.get(
+        endpoint: 'volumes?Filtering=free-ebooks&q=subject:programming',
+      );
+      List<BookModel> book = [];
+      for (var item in data['items']) {
+        book.add(BookModel.fromJson(item));
+      }
+      return right(book);
+    } catch (e) {
+      if (e is DioError) {
+        return left(Servererror.fromDioError(e));
+      }
+      return left(Servererror(e.toString()));
+    }
   }
 }
