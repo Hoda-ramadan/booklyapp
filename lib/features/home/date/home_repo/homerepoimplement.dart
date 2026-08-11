@@ -3,11 +3,13 @@ import 'package:bookly_app/core/utalts/apiServies.dart';
 import 'package:bookly_app/features/home/date/home_repo/homerepo.dart';
 import 'package:bookly_app/features/home/date/models/book_model/book_model.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 abstract class Homerepoimplement extends Homerepo {
   final Apiservies apiservies;
   Homerepoimplement(this.apiservies);
 
+  @override
   Future<Either<HomeError, List<BookModel>>> fatchNewsbooks() async {
     try {
       var data = await apiservies.get(
@@ -20,7 +22,10 @@ abstract class Homerepoimplement extends Homerepo {
       }
       return right(book);
     } catch (e) {
-      return left(HomeError());
+      if (e is DioError) {
+        return left(Servererror.fromDioError(e));
+      }
+      return left(Servererror(e.toString()));
     }
   }
 
