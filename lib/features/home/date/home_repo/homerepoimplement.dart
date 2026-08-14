@@ -5,7 +5,7 @@ import 'package:bookly_app/features/home/date/models/book_model/book_model.dart'
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-abstract class Homerepoimplement extends Homerepo {
+class Homerepoimplement extends Homerepo {
   final Apiservies apiservies;
   Homerepoimplement(this.apiservies);
 
